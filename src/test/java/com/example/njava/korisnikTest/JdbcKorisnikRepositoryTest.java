@@ -43,6 +43,7 @@ public class JdbcKorisnikRepositoryTest{
         korisnikRepository.save(noviKorisnik);
         Optional<Korisnik> provjeraKorisnika = Optional.of(userRepository.findOneByUsername("test").orElse(null));
         Assertions.assertNotNull(provjeraKorisnika);
+        korisnikRepository.deleteByUsername("test");
     }
 
     @Test
