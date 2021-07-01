@@ -15,19 +15,11 @@ public class JpaKorisnikRepositoryTest {
     UserRepository userRepository;
 
     @Test
-    void findOneByUsername(){
+    void findOneByUsername() {
         Korisnik korisnik = userRepository.findOneByUsername("user").orElse(null);
 
         Assertions.assertNotNull(korisnik);
 
-        Assertions.assertAll(
-                ()-> Assertions.assertEquals(korisnik.getIme(), "Ime2"),
-                ()-> Assertions.assertEquals(korisnik.getPrezime(), "prezime2"),
-                ()-> Assertions.assertEquals(korisnik.getUsername(), "user"),
-                ()-> Assertions.assertEquals(korisnik.getPassword(), "$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy"),
-                ()-> Assertions.assertEquals(korisnik.getKontakt(), "09954785858"),
-                ()-> Assertions.assertEquals(korisnik.getLokacija(), "lok"),
-                ()-> Assertions.assertEquals(korisnik.getEmail(), "mail"),
-                ()-> Assertions.assertEquals(korisnik.getBrojTelefona(), null)
-        );}
+        Assertions.assertEquals(korisnik.getUsername(), "user");
+    }
 }
