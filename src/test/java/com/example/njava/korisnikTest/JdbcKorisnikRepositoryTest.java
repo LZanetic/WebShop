@@ -39,11 +39,10 @@ public class JdbcKorisnikRepositoryTest{
 
     @Test
     void save(){
-        Korisnik noviKorisnik = new Korisnik(3, "test", "test", "test", "$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy", "test", "test", "test", "test");
+        Korisnik noviKorisnik = new Korisnik(3, "test", "test", "testUsername", "$2a$10$TYExkmI7uVXXVadrdTTa0OQTOorVV32jTjK.Py2BPQjEojbAx96yy", "test", "test", "test", "test");
         korisnikRepository.save(noviKorisnik);
-        Optional<Korisnik> provjeraKorisnika = Optional.of(userRepository.findOneByUsername("test").orElse(null));
+        Optional<Korisnik> provjeraKorisnika = Optional.of(userRepository.findOneByUsername("testUsername").orElse(null));
         Assertions.assertNotNull(provjeraKorisnika);
-        korisnikRepository.deleteByUsername("test");
     }
 
     @Test
