@@ -20,6 +20,6 @@ public class JpaKorisnikRepositoryTest {
 
         Assertions.assertNotNull(korisnik);
 
-        Assertions.assertEquals(korisnik.getUsername(), "user");
+        Assertions.assertEquals("user", korisnik.getUsername());
     }
 }

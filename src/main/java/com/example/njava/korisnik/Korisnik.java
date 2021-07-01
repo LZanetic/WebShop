@@ -136,4 +136,20 @@ public class Korisnik {
     public int hashCode() {
         return Objects.hash(id, ime, prezime, username, password, kontakt, lokacija, email, brojTelefona);
     }
+
+    @Override
+    public String toString() {
+        return "Korisnik{" +
+                "id=" + id +
+                ", ime='" + ime + '\'' +
+                ", prezime='" + prezime + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", kontakt='" + kontakt + '\'' +
+                ", lokacija='" + lokacija + '\'' +
+                ", email='" + email + '\'' +
+                ", brojTelefona='" + brojTelefona + '\'' +
+                ", authorities=" + authorities +
+                '}';
+    }
 }

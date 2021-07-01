@@ -54,8 +54,8 @@ public class JdbcKorisnikRepositoryTest{
         Optional<Korisnik> provjeraKorisnika = Optional.of(korisnikRepository.findByUsername("test").orElse(null));
         Assertions.assertNotNull(provjeraKorisnika);
         Assertions.assertAll(
-                () -> Assertions.assertEquals(provjeraKorisnika.get().getIme(), "Pero"),
-                () -> Assertions.assertEquals(provjeraKorisnika.get().getPrezime(), "Peric")
+                () -> Assertions.assertEquals("Pero",provjeraKorisnika.get().getIme()),
+                () -> Assertions.assertEquals("Peric",provjeraKorisnika.get().getPrezime())
         );
     }
 
@@ -65,7 +65,7 @@ public class JdbcKorisnikRepositoryTest{
 
         Assertions.assertNotNull(korisnik);
 
-        Assertions.assertEquals(korisnik.getUsername(), "user");
+        Assertions.assertEquals( "user", korisnik.getUsername());
 
     }
 
