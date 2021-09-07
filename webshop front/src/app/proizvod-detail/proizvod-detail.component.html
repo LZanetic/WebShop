@@ -1,0 +1,9 @@
+<div *ngIf="proizvod" class="text-center">
+    <h2>{{'proizvodi.detailsForm.itemDetails' | translate}} {{proizvod.naslov}}</h2>
+    <div><span>{{'proizvodi.detailsForm.description' | translate}}</span> {{proizvod.opis}}</div>
+    <div><span>{{'proizvodi.detailsForm.price' | translate}}</span>{{proizvod.cijena}}</div>
+    <div><span>{{'proizvodi.detailsForm.condition' | translate}}</span>{{proizvod.stanje}}</div>
+    <div><span>{{'proizvodi.detailsForm.category' | translate}}</span>{{proizvod.kategorija}}</div>
+    
+    <button (click)="goBack()">{{'proizvodi.detailsForm.back' | translate}}</button>
+</div>

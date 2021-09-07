@@ -1,0 +1,62 @@
+<h2 class="text-center">{{'proizvodi.title' | translate}}</h2>
+<ul class = "proizvodi">
+    <li *ngFor="let proizvod of proizvodi" class = "text-center">
+        <a routerLink="/detail/{{proizvod.naslov}}">
+            <span class="badge">{{proizvod.naslov}}</span> {{proizvod.cijena}}
+        </a>
+        <button class="delete" title="delete proizvod" *ngIf= "userService.isRoleAdmin()"
+        (click)="delete(proizvod)">x</button>
+    </li>
+</ul>
+<div class = "text-center">
+    <h3>{{'proizvodi.createTitle' | translate}}</h3>
+<div>
+</div>
+<div>
+    <label>{{'proizvodi.form.korisnikId' | translate}};
+        <div>
+            <input type="number" #korisnikId />
+        </div>
+    </label>
+</div>
+<div>
+    <label>{{'proizvodi.form.itemTitle' | translate}};
+        <div>
+            <input #naslov />
+        </div>
+    </label>
+</div>
+<div>
+    <label>{{'proizvodi.form.price' | translate}};
+        <div>
+            <input type="number" #cijena />
+        </div>
+    </label>
+</div>
+<div>
+    <label>{{'proizvodi.form.description' | translate}};
+        <div>
+            <input #opis />
+        </div>
+    </label>
+</div>
+<div>
+    <label>{{'proizvodi.form.condition' | translate}};
+        <div>
+            <input #stanje />
+        </div>
+    </label>
+</div>
+<div>
+    <label>{{'proizvodi.form.category' | translate}};
+        <div>
+            <input #kategorija />
+        </div>
+    </label>
+</div>
+
+<button (click) = "add(+korisnikId.value, naslov.value, opis.value, +cijena.value, kategorija.value, stanje.value); korisnikId.value=''; naslov.value=''; opis.value=''; cijena.value=''; kategorija.value=''; stanje.value=''">
+    {{'proizvodi.create' | translate}}
+</button>
+
+</div>
